@@ -11,13 +11,12 @@ Clone this repository and then run
 
 ```bash
   npm i
-  npx ts-node ./src/index.ts  // creates session
 ```
 Alternatively you can use `npm` or `pnpm` if that suits you. 
 
 ## Run
 
-It includes a script to create session and session details will be saved in files. One will need to create two file in the root folder with ${ smartAccountAddress }_sessions.json and ${ smartAccountAddress }_signers.json. For instance, if the account address is 0x123 then create 0x123_sessions.json and 0x123_signers.json.
+It includes a script to create session and session details will be saved in files. One will need to create two file in the root folder with ${ smartAccountAddress }_sessions.json and ${ smartAccountAddress }_signers.json names. For instance, if the account address is 0x123 then create 0x123_sessions.json and 0x123_signers.json.
 
 ```bash
   npx ts-node ./src/index.ts  // creates session
