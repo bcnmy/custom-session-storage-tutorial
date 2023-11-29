@@ -116,7 +116,6 @@ export class SessionFileStorage implements ISessionStorage
 		// this.validateSearchParam(param);
 
 		const sessions = ( await this.getSessionStore() ).leafNodes;
-		console.log( "Got sessions", sessions )
 		const session = sessions[ 0 ];
 		// const session = sessions.find((s: SessionLeafNode) => {
 		//   if (param.sessionID) {
@@ -140,7 +139,6 @@ export class SessionFileStorage implements ISessionStorage
 	}
 	async addSessionData ( leaf: SessionLeafNode ): Promise<void>
 	{
-		console.log( "Add session Data", leaf )
 		const data = await this.getSessionStore();
 		leaf.sessionValidationModule = this.toLowercaseAddress( leaf.sessionValidationModule );
 		leaf.sessionPublicKey = this.toLowercaseAddress( leaf.sessionPublicKey );
@@ -204,7 +202,6 @@ export class SessionFileStorage implements ISessionStorage
 	async getSignerByKey ( sessionPublicKey: string ): Promise<Signer>
 	{
 		const signers = await this.getSignerStore();
-		console.log( "Got signers", signers )
 		const signerData = signers[ this.toLowercaseAddress( sessionPublicKey ) ];
 		if ( !signerData )
 		{
@@ -217,7 +214,6 @@ export class SessionFileStorage implements ISessionStorage
 	async getSignerBySession ( param: SessionSearchParam ): Promise<Signer>
 	{
 		const session = await this.getSessionData( param );
-		console.log( "got session", session )
 		return this.getSignerByKey( session.sessionPublicKey );
 	}
 

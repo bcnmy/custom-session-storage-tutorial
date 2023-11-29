@@ -102,8 +102,6 @@ const createSession = async () =>
 			},
 		] );
 
-		console.log( "sessionTxData", sessionTxData );
-
 		// tx to set session key
 		const setSessiontrx = {
 			to: DEFAULT_SESSION_KEY_MANAGER_MODULE, // session manager module address
