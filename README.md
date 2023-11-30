@@ -3,8 +3,7 @@
 
 This Repository is used in the custom session storage guide for the [Biconomy SDK](https://docs.biconomy.io/docs/quickstart) as well as the Node JS guides.
 
-The main purpose of this repository is to implement a custom file storage and use as session storage. 
-
+The main purpose of this repository is to implement a custom file storage and use as session storage. The session storage module uses LocalStorage by default, Additionally anyone can make their own implementation of Session Storage by implementing ISessionStorage interface and pass it to the SessionKeyManager module instance.
 ## Installation
 
 Clone this repository and then run
@@ -16,6 +15,7 @@ Alternatively you can use `npm` or `pnpm` if that suits you.
 
 ## Run
 
+create .env file and paste the PRIVATE_KEY of your wallet. 
 It includes a script to create session and session details will be saved in files. One will need to create two file in the root folder with ${ smartAccountAddress }_sessions.json and ${ smartAccountAddress }_signers.json names. For instance, if the account address is 0x123 then create 0x123_sessions.json and 0x123_signers.json.
 
 ```bash
